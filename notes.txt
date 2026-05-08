@@ -1,0 +1,8 @@
+"EIT_NumericalAnalysis.ipynb"
+Old work
+
+"EIT_NumericalAnalysis_v2.ipynb"
+Updated simulation with comments
+
+"EIT_NumericalAnalysis_fast.ipynb"
+Faster simulation

@@ -1,0 +1,32 @@
+# EIT Numerical Analysis — Python 3.13+ requirements
+# Install with: pip install -r requirements.txt
+
+# Core numerical / scientific stack
+numpy>=2.1.0            # numpy 2.x required for Python 3.13 support
+scipy>=1.14.0           # optional but useful for signal analysis
+
+# JIT compilation — Python 3.13 support added in numba 0.61
+# numba also requires llvmlite; it is installed automatically as a dependency
+numba>=0.61.0
+llvmlite>=0.44.0
+
+# Plotting and animation
+matplotlib>=3.9.0
+
+# Interactive Jupyter widgets (needed for %matplotlib widget / interactive mode)
+# Replaces the deprecated %matplotlib notebook magic
+ipympl>=0.9.4
+
+# Jupyter environment
+jupyter>=1.1.0
+notebook>=7.2.0         # Jupyter Notebook 7 (based on JupyterLab)
+ipykernel>=6.29.0
+
+# Profiling (replaces %load_ext snakeviz — run `snakeviz output.prof` in terminal)
+snakeviz>=2.2.0
+
+# Optional: for saving MP4 animations (make_animation function)
+# Requires ffmpeg binary installed separately:
+#   Ubuntu/Debian: sudo apt install ffmpeg
+#   macOS:         brew install ffmpeg
+#   Windows:       https://ffmpeg.org/download.html

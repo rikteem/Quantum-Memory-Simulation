@@ -1,0 +1,39 @@
+# Quantum Memory Simulator — Python requirements
+# Install with:  pip install -r requirements.txt
+# Tested on Python 3.10 – 3.13
+
+# ── Core scientific stack ──────────────────────────────────────────────────
+numpy>=2.0.0
+scipy>=1.13.0
+
+# ── JIT compilation (physics kernel) ──────────────────────────────────────
+# Python 3.13 support added in numba 0.61+
+numba>=0.61.0
+llvmlite>=0.44.0
+
+# ── Plotting ───────────────────────────────────────────────────────────────
+matplotlib>=3.9.0
+
+# ── GUI framework (Dash / React) ───────────────────────────────────────────
+dash>=2.14.0
+dash-bootstrap-components>=1.5.0
+plotly>=5.18.0
+
+# ── Legacy PyQt5 GUI (main.py — still works as fallback) ──────────────────
+PyQt5>=5.15.0
+# On Linux: apt install python3-pyqt5
+
+# ── Optional: animation export (MP4) ──────────────────────────────────────
+# Requires ffmpeg binary installed separately:
+#   Windows: https://ffmpeg.org/download.html  (add to PATH)
+#   macOS:   brew install ffmpeg
+#   Linux:   sudo apt install ffmpeg
+
+# ── Optional: Jupyter notebook (for original EIT_NumericalAnalysis.ipynb) ─
+# jupyter>=1.1.0
+# notebook>=7.2.0
+# ipykernel>=6.29.0
+# ipympl>=0.9.4        # for %matplotlib widget
+
+# ── Optional: profiling ────────────────────────────────────────────────────
+# snakeviz>=2.2.0

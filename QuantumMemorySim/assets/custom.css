@@ -1,0 +1,334 @@
+/* Quantum Memory Simulator — CSS custom-property theming */
+
+/* ── Custom properties ──────────────────────────────────────────── */
+:root {
+    /* Dark (Catppuccin Mocha) — default */
+    --qm-bg:     #1e1e2e;
+    --qm-bg2:    #181825;
+    --qm-surf:   #313244;
+    --qm-txt:    #cdd6f4;
+    --qm-sub:    #a6adc8;
+    --qm-ttl:    #89b4fa;
+    --qm-border: #45475a;
+    --qm-blue:   #89b4fa;
+    --qm-green:  #a6e3a1;
+    --qm-red:    #f38ba8;
+    --qm-yellow: #f9e2af;
+    --qm-peach:  #fab387;
+    --qm-mauve:  #cba6f7;
+}
+
+:root.light-mode {
+    /* Light (Catppuccin Latte) */
+    --qm-bg:     #eff1f5;
+    --qm-bg2:    #e6e9ef;
+    --qm-surf:   #ccd0da;
+    --qm-txt:    #4c4f69;
+    --qm-sub:    #6c6f85;
+    --qm-ttl:    #1e66f5;
+    --qm-border: #acb0be;
+    --qm-blue:   #1e66f5;
+    --qm-green:  #40a02b;
+    --qm-red:    #d20f39;
+    --qm-yellow: #df8e1d;
+    --qm-peach:  #fe640b;
+    --qm-mauve:  #8839ef;
+}
+
+/* ── Root / body ─────────────────────────────────────────────────── */
+html, body, .qm-root {
+    background-color: var(--qm-bg) !important;
+    color: var(--qm-txt) !important;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-size: 14px;
+}
+
+/* ── Header bar ──────────────────────────────────────────────────── */
+.qm-header {
+    background: var(--qm-bg2) !important;
+    border-bottom: 2px solid var(--qm-border) !important;
+    margin: 0 !important;
+    padding: 0 14px !important;
+}
+
+/* ── Sidebar ─────────────────────────────────────────────────────── */
+.qm-sidebar {
+    background: var(--qm-bg2) !important;
+    padding: 10px 8px !important;
+    border-right: 1px solid var(--qm-border) !important;
+}
+
+/* ── Run button — gradient accent ────────────────────────────────── */
+.qm-btn-run {
+    background: linear-gradient(135deg, #89b4fa 0%, #74c7ec 100%) !important;
+    border: none !important;
+    color: #1e1e2e !important;
+    font-weight: 700 !important;
+    transition: transform 0.1s, box-shadow 0.1s !important;
+}
+.qm-btn-run:hover, .qm-btn-run:focus {
+    background: linear-gradient(135deg, #74c7ec 0%, #89b4fa 100%) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(137, 180, 250, 0.35) !important;
+    color: #1e1e2e !important;
+}
+:root.light-mode .qm-btn-run {
+    background: linear-gradient(135deg, #1e66f5 0%, #04a5e5 100%) !important;
+    color: #ffffff !important;
+}
+:root.light-mode .qm-btn-run:hover {
+    box-shadow: 0 4px 14px rgba(30, 102, 245, 0.3) !important;
+}
+
+/* ── Theme toggle ────────────────────────────────────────────────── */
+.qm-theme-btn {
+    background: var(--qm-surf) !important;
+    border: 1px solid var(--qm-border) !important;
+    color: var(--qm-ttl) !important;
+    font-size: 0.75rem !important;
+    border-radius: 20px !important;
+    padding: 3px 12px !important;
+    transition: background 0.15s !important;
+}
+.qm-theme-btn:hover {
+    background: var(--qm-border) !important;
+}
+
+/* ── Input fields ────────────────────────────────────────────────── */
+.qm-input,
+input[type=number],
+input[type=text] {
+    background: var(--qm-surf) !important;
+    color: var(--qm-txt) !important;
+    border: 1px solid var(--qm-border) !important;
+    border-radius: 4px !important;
+    font-size: 0.8rem !important;
+}
+.qm-input:focus,
+input:focus {
+    border-color: var(--qm-blue) !important;
+    box-shadow: 0 0 0 2px rgba(137, 180, 250, 0.18) !important;
+    outline: none !important;
+}
+
+/* ── Utility text classes ────────────────────────────────────────── */
+.qm-label {
+    font-size: 0.77rem;
+    color: var(--qm-sub);
+    display: block;
+    margin-bottom: 2px;
+}
+.qm-subtitle {
+    font-size: 0.82rem !important;
+    color: var(--qm-ttl) !important;
+    font-weight: 600 !important;
+    margin-top: 6px !important;
+    margin-bottom: 4px !important;
+}
+
+/* ── Preformatted blocks (metrics, sweep info) ───────────────────── */
+.qm-pre {
+    background: var(--qm-bg2) !important;
+    color: var(--qm-txt) !important;
+    padding: 8px 12px !important;
+    border-radius: 6px !important;
+    font-size: 0.78rem !important;
+    border: 1px solid var(--qm-border) !important;
+    line-height: 1.55 !important;
+}
+
+/* ── Sweep sidebar column ────────────────────────────────────────── */
+.qm-sidebar-col {
+    background: var(--qm-bg2) !important;
+    padding: 10px 14px !important;
+    border-right: 1px solid var(--qm-border) !important;
+}
+
+/* ── Dropdown (Dash Select v1 & v2) ─────────────────────────────── */
+.dark-dropdown .Select-control,
+.dark-dropdown .VirtualizedSelectFocusedOption {
+    background: var(--qm-surf) !important;
+    border-color: var(--qm-border) !important;
+    color: var(--qm-txt) !important;
+}
+.dark-dropdown .Select-menu-outer { background: var(--qm-surf) !important; }
+.dark-dropdown .Select-option     { background: var(--qm-surf) !important; color: var(--qm-txt) !important; }
+.dark-dropdown .Select-option.is-focused { background: var(--qm-border) !important; }
+.dark-dropdown .Select-value-label { color: var(--qm-txt) !important; }
+.dark-dropdown .Select-arrow { border-top-color: var(--qm-sub) !important; }
+.dark-dropdown input { color: var(--qm-txt) !important; background: transparent !important; }
+.dark-dropdown .Select--single > .Select-control .Select-value { color: var(--qm-txt) !important; }
+.dark-dropdown .Select-placeholder { color: var(--qm-sub) !important; }
+
+/* ── Bootstrap Accordion ─────────────────────────────────────────── */
+.accordion-button {
+    background-color: var(--qm-surf) !important;
+    color: var(--qm-ttl) !important;
+    font-size: 0.79rem !important;
+    font-weight: 600 !important;
+    padding: 7px 10px !important;
+}
+.accordion-button:not(.collapsed) {
+    background-color: var(--qm-border) !important;
+    color: var(--qm-mauve) !important;
+    box-shadow: none !important;
+}
+.accordion-button::after { filter: invert(0.7) brightness(1.4); }
+.accordion-item  { border-color: var(--qm-border) !important; }
+.accordion-body  {
+    background: var(--qm-bg) !important;
+    padding: 8px 6px !important;
+}
+
+/* ── Bootstrap Tabs ──────────────────────────────────────────────── */
+.nav-tabs { border-bottom-color: var(--qm-border) !important; }
+.nav-tabs .nav-link {
+    color: var(--qm-sub) !important;
+    background-color: var(--qm-surf) !important;
+    border-color: var(--qm-border) !important;
+    font-size: 0.82rem !important;
+    padding: 5px 13px !important;
+    transition: all 0.15s ease !important;
+}
+.nav-tabs .nav-link.active {
+    color: var(--qm-ttl) !important;
+    background-color: var(--qm-bg) !important;
+    border-bottom-color: var(--qm-bg) !important;
+    border-top: 2px solid var(--qm-ttl) !important;
+    font-weight: 700 !important;
+}
+.nav-tabs .nav-link:hover {
+    color: var(--qm-txt) !important;
+    background: var(--qm-border) !important;
+}
+.tab-content {
+    background: var(--qm-bg) !important;
+    border: 1px solid var(--qm-border) !important;
+    border-top: none !important;
+    padding: 6px !important;
+}
+
+/* ── Progress bar ────────────────────────────────────────────────── */
+.qm-progress { height: 14px !important; border-radius: 7px !important; }
+.progress     { background-color: var(--qm-surf) !important; border-radius: 7px !important; }
+.progress-bar {
+    background: linear-gradient(90deg, var(--qm-blue), var(--qm-mauve)) !important;
+    border-radius: 7px !important;
+}
+
+/* ── Scrollbar ───────────────────────────────────────────────────── */
+::-webkit-scrollbar       { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--qm-bg2); }
+::-webkit-scrollbar-thumb { background: var(--qm-border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--qm-sub); }
+
+/* ── Optical-depth quick-set box ─────────────────────────────────── */
+.qm-od-box {
+    padding: 7px 8px !important;
+    border: 1px solid var(--qm-border) !important;
+    border-radius: 6px !important;
+    background: var(--qm-surf) !important;
+}
+
+/* ── Checklist text ──────────────────────────────────────────────── */
+.form-check-label { color: var(--qm-txt) !important; font-size: 0.8rem !important; }
+.form-check-input:checked { background-color: var(--qm-blue) !important; border-color: var(--qm-blue) !important; }
+
+/* ── 1920×1080 contrast & font-size improvements ──────────────────── */
+.js-plotly-plot .plotly .gtitle {
+    font-size: 15px !important;
+    font-weight: 600 !important;
+}
+.js-plotly-plot .plotly .xtitle,
+.js-plotly-plot .plotly .ytitle {
+    font-size: 13px !important;
+}
+.js-plotly-plot .plotly .xtick text,
+.js-plotly-plot .plotly .ytick text {
+    font-size: 11px !important;
+}
+.js-plotly-plot .plotly .legendtext {
+    font-size: 12px !important;
+}
+/* Plotly modebar */
+.js-plotly-plot .plotly .modebar { background: transparent !important; }
+.js-plotly-plot .plotly .modebar-btn path { fill: var(--qm-sub) !important; }
+
+/* ── Bootstrap form controls — force dark theme on all inputs ────────── */
+.form-control,
+.form-select,
+input[type=number],
+input[type=text],
+input[type=email],
+input[type=search],
+select,
+textarea {
+    background-color: var(--qm-surf) !important;
+    color: var(--qm-txt) !important;
+    border-color: var(--qm-border) !important;
+}
+.form-control:focus,
+.form-select:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    background-color: var(--qm-surf) !important;
+    color: var(--qm-txt) !important;
+    border-color: var(--qm-blue) !important;
+    box-shadow: 0 0 0 2px rgba(137, 180, 250, 0.18) !important;
+    outline: none !important;
+}
+
+/* Dash dcc.Dropdown v2 (Select-based) full dark override */
+.Select-control,
+.Select-menu-outer,
+.Select-option,
+.Select-value-label,
+.Select--single > .Select-control .Select-value {
+    background-color: var(--qm-surf) !important;
+    color: var(--qm-txt) !important;
+    border-color: var(--qm-border) !important;
+}
+.Select-option.is-focused { background: var(--qm-border) !important; }
+.Select-arrow { border-top-color: var(--qm-sub) !important; }
+.Select-placeholder { color: var(--qm-sub) !important; }
+.Select-input input { background: transparent !important; color: var(--qm-txt) !important; }
+
+/* Dash dcc.Dropdown v3 (VirtualizedList / React-Select based) */
+.dash-dropdown .Select-control { background: var(--qm-surf) !important; }
+div[class*="menu"] { background: var(--qm-surf) !important; color: var(--qm-txt) !important; }
+div[class*="option"] { background: var(--qm-surf) !important; color: var(--qm-txt) !important; }
+div[class*="option"]:hover,
+div[class*="option--is-focused"] { background: var(--qm-border) !important; }
+div[class*="singleValue"] { color: var(--qm-txt) !important; }
+div[class*="control"] { background: var(--qm-surf) !important; border-color: var(--qm-border) !important; }
+div[class*="placeholder"] { color: var(--qm-sub) !important; }
+div[class*="indicatorContainer"] svg { fill: var(--qm-sub) !important; }
+
+/* Bootstrap card / modal / list-group cells */
+.card, .card-body, .card-header,
+.list-group-item,
+.modal-content, .modal-body, .modal-header, .modal-footer {
+    background-color: var(--qm-bg2) !important;
+    color: var(--qm-txt) !important;
+    border-color: var(--qm-border) !important;
+}
+
+/* Number spinner arrows (Chrome/Edge) */
+input[type=number]::-webkit-inner-spin-button { opacity: 0.4; }
+
+/* Light-mode overrides — keep Latte palette */
+:root.light-mode .form-control,
+:root.light-mode .form-select,
+:root.light-mode select,
+:root.light-mode input[type=number],
+:root.light-mode input[type=text] {
+    background-color: var(--qm-surf) !important;
+    color: var(--qm-txt) !important;
+}
+:root.light-mode .card,
+:root.light-mode .card-body,
+:root.light-mode .list-group-item {
+    background-color: var(--qm-bg2) !important;
+    color: var(--qm-txt) !important;
+}
